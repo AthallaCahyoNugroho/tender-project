@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Java/tender-project/src/model/ProjectModel.java</file>
             <file>file:/D:/Java/tender-project/src/view/AdminForm.java</file>
             <file>file:/D:/Java/tender-project/src/view/ClientForm.java</file>
-            <file>file:/D:/Java/tender-project/src/model/VendorModel.java</file>
-            <file>file:/D:/Java/tender-project/src/controller/UserController.java</file>
-            <file>file:/D:/Java/tender-project/src/model/PManagerModel.java</file>
+            <file>file:/D:/Java/tender-project/src/model/PMModel.java</file>
             <file>file:/D:/Java/tender-project/src/view/login.java</file>
-            <file>file:/D:/Java/tender-project/src/controllerInterface/InterfaceControlUser.java</file>
-            <file>file:/D:/Java/tender-project/src/view/LoginForm.java</file>
-            <file>file:/D:/Java/tender-project/src/connector/DatabaseConnection.java</file>
-            <file>file:/D:/Java/tender-project/src/model/PengumpulanModel.java</file>
+            <file>file:/D:/Java/tender-project/src/controller/PMController.java</file>
             <file>file:/D:/Java/tender-project/src/view/RegisterForm.java</file>
         </group>
     </open-files>
