@@ -9,11 +9,23 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/tender_project";
-    private static final String USER = "root";  // ganti dengan user MySQL Anda
-    private static final String PASSWORD = "";  // ganti dengan password MySQL Anda
+    static Connection con;
+    static String url = "jdbc:mysql://localhost:3306/test";
+    static String user = "root";
+    static String password = "";
+    
+    public static Connection getConnection(){
+        if (con == null){
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection(url,user,password);
 
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+                System.out.print(con + "bisa");
+            } catch (ClassNotFoundException | SQLException ex) {
+                System.out.println("error"+ex);
+
+            }
+        }
+        return con;
     }
 }
