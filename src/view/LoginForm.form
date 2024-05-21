@@ -87,9 +87,9 @@
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="LoginButton" alignment="0" max="32767" attributes="0"/>
-                              <Component id="PasswordInput" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UsernameInput" alignment="0" pref="243" max="32767" attributes="0"/>
+                              <Component id="loginButton" alignment="0" max="32767" attributes="0"/>
+                              <Component id="passwordInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="usernameInput" alignment="0" pref="243" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -111,13 +111,13 @@
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="UsernameInput" min="-2" max="-2" attributes="0"/>
+                      <Component id="usernameInput" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="PasswordInput" min="-2" max="-2" attributes="0"/>
+                      <Component id="passwordInput" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="LoginButton" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="loginButton" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace pref="32" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -132,29 +132,27 @@
                 <Property name="text" type="java.lang.String" value="Login Your Account"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="UsernameInput">
+            <Component class="javax.swing.JTextField" name="usernameInput">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="2"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Ex. name@example.com"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsernameInputActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="usernameInputActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="PasswordInput">
+            <Component class="javax.swing.JTextField" name="passwordInput">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="2"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="********"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PasswordInputActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordInputActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="LoginButton">
+            <Component class="javax.swing.JButton" name="loginButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
@@ -162,7 +160,7 @@
                 <Property name="text" type="java.lang.String" value="Login"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoginButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginButtonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
