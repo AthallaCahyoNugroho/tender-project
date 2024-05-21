@@ -4,17 +4,22 @@
  */
 package view;
 
+import controller.PMController;
+import javax.swing.JTextField;
+
 /**
  *
  * @author lenovo
  */
 public class LoginForm extends javax.swing.JFrame {
+    PMController pmc;
 
     /**
      * Creates new form LoginForm
      */
     public LoginForm() {
         initComponents();
+        pmc = new PMController(this);
     }
 
     /**
@@ -29,9 +34,9 @@ public class LoginForm extends javax.swing.JFrame {
         Background = new javax.swing.JPanel();
         BackgroundForm = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        Login = new javax.swing.JButton();
+        usernameInput = new javax.swing.JTextField();
+        passwordInput = new javax.swing.JTextField();
+        loginButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -48,22 +53,25 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Login Your Account");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField1.setText("Ex. name@example.com");
-
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jTextField2.setText("********");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        usernameInput.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        usernameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                usernameInputActionPerformed(evt);
             }
         });
 
-        Login.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Login.setText("Login");
-        Login.addActionListener(new java.awt.event.ActionListener() {
+        passwordInput.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        passwordInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
+                passwordInputActionPerformed(evt);
+            }
+        });
+
+        loginButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
             }
         });
 
@@ -81,9 +89,9 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(BackgroundFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(Login, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE))
+                        .addComponent(loginButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(passwordInput, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(usernameInput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE))
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addContainerGap(48, Short.MAX_VALUE))
@@ -100,13 +108,13 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel2)
                 .addGap(8, 8, 8)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usernameInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
-                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -148,7 +156,10 @@ public class LoginForm extends javax.swing.JFrame {
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LoginActionPerformed
-
+    
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt){
+        pmc.login();
+    }
     /**
      * @param args the command line arguments
      */
@@ -187,11 +198,18 @@ public class LoginForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JPanel BackgroundForm;
-    private javax.swing.JButton Login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JTextField passwordInput;
+    private javax.swing.JTextField usernameInput;
     // End of variables declaration//GEN-END:variables
+    public JTextField getUsernameInput(){
+        return usernameInput;
+    }
+    
+    public JTextField getPasswordInput(){
+        return passwordInput;
+    }
 }

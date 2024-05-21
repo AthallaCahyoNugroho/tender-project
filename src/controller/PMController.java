@@ -4,43 +4,42 @@
  */
 package controller;
 
-import connector.DatabaseConnection;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import controllerInterface.InterfaceControlPM;
+import java.util.List;
 import javax.swing.JOptionPane;
+import model.PMModel;
+import view.LoginForm;
+import modelDAO.PMDao;
+import modelDAOI.PMDaoi;
 import view.AdminForm;
-import view.ClientForm;
 
 /**
  *
  * @author lenovo
  */
-public class PMController {
-    Connection con = DatabaseConnection.getConnection();
-    String login = "SELECT * FROM users WHERE username = ? AND password = ?";
+public class PMController implements InterfaceControlPM{
+    LoginForm frame;
+    PMDaoi pmi;
+    List<PMModel> lpm;
+    
+    public PMController(LoginForm frame) {
+        this.frame = frame;
+        pmi = new PMDao();
+    }
+    
+    @Override
+    public void loginAdmin(){
+        AdminForm adminForm = new AdminForm();
+        adminForm.setVisible(true);
+    }
     
     @Override
     public void login(){
-        PreparedStatement preparedStatement = con.prepareStatement(login);
-        preparedStatement.setString(1, usernameField.getText());
-        preparedStatement.setString(2, new String(passwordField.getPassword()));
-        ResultSet resultSet = preparedStatement.executeQuery();
-
-        if (resultSet.next()) {
-            String role = resultSet.getString("role");
-            if ("admin".equals(role)) {
-                // Buka jendela admin
-                AdminForm adminForm = new AdminForm();
-                adminForm.setVisible(true);
-            } else if ("client".equals(role)) {
-                // Buka jendela client
-                ClientForm clientForm = new ClientForm();
-                clientForm.setVisible(true);
-            }
-            dispose();
+        if(!frame.getPasswordInput().getText().trim().isEmpty() & !frame.getUsernameInput().getText().trim().isEmpty()){
+            pmi.login(frame.getUsernameInput().getText(), frame.getPasswordInput().getText());
+            loginAdmin();
         } else {
-        JOptionPane.showMessageDialog(null, "Invalid username or password");
+            JOptionPane.showMessageDialog(frame, "Silahkan Pilih Data");
         }
     }
 }
