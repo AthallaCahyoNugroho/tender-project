@@ -30,6 +30,7 @@ public class PMController implements InterfaceControlPM{
     @Override
     public void loginAdmin(){
         AdminForm adminForm = new AdminForm();
+        frame.setVisible(false);
         adminForm.setVisible(true);
     }
     
