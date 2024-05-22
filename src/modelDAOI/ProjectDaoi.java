@@ -4,10 +4,13 @@
  */
 package modelDAOI;
 
+import java.util.List;
+import model.ProjectModel;
+
 /**
  *
  * @author lenovo
  */
 public interface ProjectDaoi {
-    
+    public List<ProjectModel> getAll();
 }

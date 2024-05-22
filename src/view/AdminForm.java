@@ -146,7 +146,6 @@ public class AdminForm extends javax.swing.JFrame {
     private void projectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectButtonActionPerformed
         // TODO add your handling code here:
         AdminFormProject page = new AdminFormProject();
-        frame.setVisible(false);
         page.setVisible(true);
     }//GEN-LAST:event_projectButtonActionPerformed
 

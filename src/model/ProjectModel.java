@@ -15,6 +15,7 @@ public class ProjectModel {
     /**
      * @return the id
      */
+    
     public Integer getId() {
         return id;
     }
@@ -86,4 +87,5 @@ public class ProjectModel {
     private String name;
     private String description;
     private Date deadline;
+    
 }

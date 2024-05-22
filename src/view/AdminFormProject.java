@@ -3,18 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.ProjectController;
+import javax.swing.JTable;
 
 /**
  *
  * @author lenovo
  */
 public class AdminFormProject extends javax.swing.JFrame {
+    ProjectController project;
 
     /**
      * Creates new form AdminFormProject
      */
     public AdminFormProject() {
         initComponents();
+        project = new ProjectController(this);
+        project.TableContent();        
     }
 
     /**
@@ -34,7 +39,7 @@ public class AdminFormProject extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblProject = new javax.swing.JTable();
         searchInput = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
@@ -113,7 +118,7 @@ public class AdminFormProject extends javax.swing.JFrame {
                 .addContainerGap(414, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblProject.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -124,7 +129,7 @@ public class AdminFormProject extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblProject);
 
         searchInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +149,7 @@ public class AdminFormProject extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 841, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(searchInput, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -242,9 +247,15 @@ public class AdminFormProject extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton projectButton;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchInput;
+    private javax.swing.JTable tblProject;
     // End of variables declaration//GEN-END:variables
+    
+    public JTable getTblProject (){
+        return tblProject;
+    }
+    
+
 }

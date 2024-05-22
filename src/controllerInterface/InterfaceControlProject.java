@@ -9,5 +9,6 @@ package controllerInterface;
  * @author lenovo
  */
 public interface InterfaceControlProject {
+    public void TableContent();
     
 }
